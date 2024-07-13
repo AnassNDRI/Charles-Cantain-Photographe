@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { inject, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
@@ -12,16 +12,28 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { RateServiceComponent } from './pages/rate-service/rate-service.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'pictures', component: GalleryComponent},
-  {path: 'rateServices', component: RateServiceComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'admin', component: AdministratorComponent, canActivate: [AuthGuard]},
-  {path: 'picturemanage', component: PictureManageComponent, canActivate: [AuthGuard]},
-  {path: 'serviceratemanage', component: ServeRateManageComponent, canActivate: [AuthGuard]},
-  {path: '**', component: PageNotFoundComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'pictures', component: GalleryComponent },
+  { path: 'rateServices', component: RateServiceComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { 
+    path: 'admin', 
+    component: AdministratorComponent, 
+    canActivate: [() => inject(AuthGuard).canActivate()] 
+  },
+  { 
+    path: 'picturemanage', 
+    component: PictureManageComponent, 
+    canActivate: [() => inject(AuthGuard).canActivate()] 
+  },
+  { 
+    path: 'serviceratemanage', 
+    component: ServeRateManageComponent, 
+    canActivate: [() => inject(AuthGuard).canActivate()] 
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

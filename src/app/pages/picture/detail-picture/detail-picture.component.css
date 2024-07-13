@@ -39,8 +39,6 @@ body {
   padding: 15px 0 0 0;
 }
 
-
-
 .carte-centree {
   margin: 0 auto;
   transform: scale(1.75);
@@ -64,9 +62,6 @@ body {
 #ads .card-image-overlay span {
   display: inline-block;
 }
-
-
-
 
 #ads .ad-btn {
   text-transform: uppercase;
@@ -95,7 +90,6 @@ body {
   box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
 }
 
-
 #ads .back-btn {
   text-transform: uppercase;
   width: 70px;
@@ -123,7 +117,6 @@ body {
   box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
 }
 
-
 #ads .delete-btn {
   text-transform: uppercase;
   width: 70px;
@@ -132,21 +125,74 @@ body {
   font-size: 8px;
   line-height: 12px;
   text-align: center;
-  border: 3px solid  rgb(230, 4, 4);
+  border: 3px solid rgb(230, 4, 4);
   display: block;
   text-decoration: none;
   margin: 20px auto 1px auto;
   color: #000;
   overflow: hidden;
   position: relative;
-  background-color:   rgb(230, 4, 4);
+  background-color: rgb(230, 4, 4);
 }
 
 #ads .delete-btn:hover {
-  background-color:  rgb(230, 4, 4);
+  background-color: rgb(230, 4, 4);
   color: #1e1717;
-  border: 2px solid  rgb(230, 4, 4);
+  border: 2px solid rgb(230, 4, 4);
   background: transparent;
   transition: all 0.3s ease;
   box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .carte-centree {
+    transform: scale(1);
+  }
+
+  .card {
+    transform: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+  }
+
+  .card-notify-badge, .card-notify-year {
+    font-size: 12px;
+  }
+
+  .ad-btn, .back-btn, .delete-btn {
+    width: 60px;
+    height: 18px;
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carte-centree {
+    transform: scale(0.8);
+  }
+
+  .card {
+    transform: none;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  }
+
+  .card-notify-badge, .card-notify-year {
+    font-size: 10px;
+  }
+
+  .ad-btn, .back-btn, .delete-btn {
+    width: 50px;
+    height: 16px;
+    font-size: 6px;
+  }
 }
