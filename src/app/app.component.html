@@ -1,0 +1,41 @@
+
+ <div class="header"  *ngIf="headerVisible">
+  <div class="logo">
+    <a routerLink="/home"> <img src="../../../assets/pictures/logo.png" alt="Logo"></a>
+  </div>
+  <div class="hamburger" (click)="toggleMenu()">&#9776;</div>
+  <nav class="menu" [ngClass]="{'active': menuActive}">
+    <ul>
+      <li *ngIf="isLoggedIn" class="admin-link"><a routerLink="/admin">Administrateur</a></li>
+      <li><a routerLink="/home">Accueil</a></li>
+      <li><a routerLink="/pictures">Galerie</a></li>
+      <li><a routerLink="/rateServices">Tarifs</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/login"><i class="fas fa-user "></i></a></li>
+      <li *ngIf="isLoggedIn"><a (click)="logout()" class="text-red"><i class="fas fa-sign-out-alt text-red "></i>Deconnection</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+<router-outlet></router-outlet>
+
+<footer class="footer fixed-footer">
+  <div class="container">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <div class="row" style="padding: 20px ;">
+    <div class="col ">
+      <img src="../assets/moi.jpg" width="120" height="150"
+      class="img-fluid disign  profil">
+      <p>Dévolopper par:<br>
+        <strong>Anass N'DRI</strong><br>
+        Développeur Angular Full Stack</p>
+    </div>
+</div>
+</footer>
