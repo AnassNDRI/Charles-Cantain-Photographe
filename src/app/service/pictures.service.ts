@@ -9,7 +9,7 @@ import { PICTURES } from '../mockData/mock-pictures-list';
   providedIn: 'root'
 })
 export class PicturesService {
-  private picturesUrl = 'api/pictures'; // URL de l'API
+
 
   constructor(private http: HttpClient) { }
 
